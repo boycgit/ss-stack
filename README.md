@@ -9,7 +9,7 @@ Data Structure Serial -  Queue
  - fully tested
 
 Refer:
- - [前端学数据结构 - 栈（Stack）和 队列（Queue）]()
+ - [前端学数据结构 - 栈（Stack）和 队列（Queue）](https://boycgit.github.io/ss-stack/)
 
 ## Installation
 

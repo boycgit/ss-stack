@@ -15,10 +15,10 @@ export default class stack<T> {
   /**
    * Read the element at the front of the queue without removing it.
    *
-   * @returns {(T | null)}
+   * @returns {(T | void)}
    * @memberof Queue
    */
-  get peek(): T | null {
+  get peek(): T | void {
     return this.stack.tail;
   }
 
@@ -46,13 +46,13 @@ export default class stack<T> {
 
   /**
    * Remove the element at the front of the queue (the head of the linked list).
-   * If the queue is empty, return null.
+   * If the queue is empty, return void.
    *
-   * @returns {(T | null)}
+   * @returns {(T | void)}
    * @memberof Queue
    */
-  pop(): T | null {
+  pop(): T | void {
     const removedTail = this.stack.removeTail();
-    return removedTail ? removedTail : null;
+    return typeof removedTail !== 'undefined' ? removedTail : void 0;
   }
 }

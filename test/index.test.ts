@@ -33,7 +33,7 @@ describe('堆栈 - peek 属性', () => {
 
   test('访问空对堆栈的时候，返回 null', () => {
     const emptyQueue = new Stack();
-    expect(emptyQueue.peek).toBeNull();
+    expect(emptyQueue.peek).toBeUndefined();
   });
 });
 
@@ -77,8 +77,8 @@ describe('堆栈 - pop 方法', () => {
   test('空对堆栈也支持 pop ', () => {
     const data = chance.integer();
     const emptyQueue = new Stack();
-    expect(emptyQueue.pop()).toBeNull();
+    expect(emptyQueue.pop()).toBeUndefined();
     expect(emptyQueue.length).toBe(0);
-    expect(emptyQueue.peek).toBeNull();
+    expect(emptyQueue.peek).toBeUndefined();
   });
 });
