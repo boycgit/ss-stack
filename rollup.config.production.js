@@ -11,7 +11,7 @@ const capitalize = ([first, ...rest], lowerRest = false) =>
   (lowerRest ? rest.join('').toLowerCase() : rest.join(''));
 
 // 根据配置生成所需要的插件列表
-const getPlugin = function ({ shouldMinified, isES6 }) {
+const getPlugin = function({ shouldMinified, isES6 }) {
   let plugins = [resolve()];
   if (shouldMinified) {
     plugins.push(isES6 ? terser() : uglify());
@@ -20,7 +20,7 @@ const getPlugin = function ({ shouldMinified, isES6 }) {
 };
 
 // 根据这些配置项生成具体的 rollup 配置项
-const compileConfig = function ({
+const compileConfig = function({
   fromDir,
   outputFileName,
   shouldMinified,
@@ -35,11 +35,14 @@ const compileConfig = function ({
   return Object.assign(external ? { external: external } : {}, {
     input: path.resolve(fromDir, `${targetName}.js`),
     output: Object.assign(
+      {
+        exports: 'named' // 这个很关键，统一 cmd 的引用方式
+      },
       format === 'umd'
         ? {
-          name: capitalize(targetName),
-          globals: capitalize(targetName)
-        }
+            name: capitalize(targetName),
+            globals: capitalize(targetName)
+          }
         : {},
       {
         file: path.join(__dirname, 'dist', outputFileArr.join('.')),

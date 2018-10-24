@@ -68,14 +68,12 @@ describe('堆栈 - pop 方法', () => {
   });
 
   test('出栈操作', () => {
-    const data = chance.integer();
     expect(a.pop()).toBe(arr[arr.length - 1]);
     expect(a.length).toBe(arr.length - 1);
     expect(a.peek).toBe(arr[arr.length - 2]);
   });
 
   test('空对堆栈也支持 pop ', () => {
-    const data = chance.integer();
     const emptyQueue = new Stack();
     expect(emptyQueue.pop()).toBeUndefined();
     expect(emptyQueue.length).toBe(0);
