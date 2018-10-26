@@ -55,4 +55,14 @@ export default class stack<T> {
     const removedTail = this.stack.removeTail();
     return typeof removedTail !== 'undefined' ? removedTail : void 0;
   }
+
+  /**
+   * transform to array
+   *
+   * @returns {T[]}
+   * @memberof Queue
+   */
+  toArray(): T[] {
+    return this.stack.toArray();
+  }
 }
