@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.7"></a>
+## [1.0.7](https://github.com/boycgit/ss-stack/compare/v1.0.6...v1.0.7) (2018-10-26)
+
+
+### Features
+
+* **功能:** 新增 `toArray()` 方法 ([285281f](https://github.com/boycgit/ss-stack/commit/285281f))
+
+
+
 <a name="1.0.6"></a>
 ## [1.0.6](https://github.com/boycgit/ss-stack/compare/v1.0.5...v1.0.6) (2018-10-26)
 
