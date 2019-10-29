@@ -45,7 +45,7 @@ export default class stack<T> {
   }
 
   /**
-   * Remove the element at the front of the queue (the head of the linked list).
+   * Remove the element at the front of the queue (the tail of the linked list).
    * If the queue is empty, return void.
    *
    * @returns {(T | void)}
@@ -54,6 +54,18 @@ export default class stack<T> {
   pop(): T | void {
     const removedTail = this.stack.removeTail();
     return typeof removedTail !== 'undefined' ? removedTail : void 0;
+  }
+
+  /**
+   * Remove the element at the bottom of the queue (the head of the linked list).
+   * If the queue is empty, return void.
+   *
+   * @returns {(T | void)}
+   * @memberof Queue
+   */
+  popBottom(): T | void {
+    const removedHead = this.stack.removeHead();
+    return typeof removedHead !== 'undefined' ? removedHead : void 0;
   }
 
   /**

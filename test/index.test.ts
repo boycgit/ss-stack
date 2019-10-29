@@ -82,3 +82,24 @@ describe('堆栈 - pop 方法', () => {
     expect(emptyQueue.peek).toBeUndefined();
   });
 });
+
+describe('堆栈 - popBottom 方法', () => {
+  let a, arr;
+  beforeEach(() => {
+    arr = chance.n(chance.integer, chance.integer({ min: 2, max: 10 }));
+    a = new Stack(...arr);
+  });
+
+  test('出栈操作', () => {
+    expect(a.popBottom()).toBe(arr[0]);
+    expect(a.length).toBe(arr.length - 1);
+    expect(a.peek).toBe(arr[arr.length - 1]);
+  });
+
+  test('空对堆栈也支持 pop ', () => {
+    const emptyQueue = new Stack();
+    expect(emptyQueue.popBottom()).toBeUndefined();
+    expect(emptyQueue.length).toBe(0);
+    expect(emptyQueue.peek).toBeUndefined();
+  });
+});
